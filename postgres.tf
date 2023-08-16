@@ -1,11 +1,7 @@
-resource "azurerm_resource_group" "KPA23-Belfast23-connor-rg" {
-  name     = "connor-resources"
-  location = "eastus"
-}
 
-resource "azurerm_postgresql_server" "KPA23-Belfast23-connor-rg" {
+resource "azurerm_postgresql_server" "KPA23-Belfast23-connor-sql" {
   name                = "connor-psqlserver"
-  location            = azurerm_resource_group.KPA23-Belfast23-connor-rg.location
+  location            = azurerm_resource_group.KPA-Belfast23-connor-rg.location
   resource_group_name = azurerm_resource_group.KPA-Belfast23-connor-rg.name
 
   administrator_login          = "psqladmin"
