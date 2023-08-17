@@ -62,8 +62,8 @@ resource "azurerm_subnet" "vm-subnet" {
 
 #Subnet For Bastian
 
-resource "azurerm_subnet" "bastian-subnet" {
-  name                 = "bastian-subnet"
+resource "azurerm_subnet" "AzureBastionSubnet" {
+  name                 = "AzureBastionSubnet"
   resource_group_name  = azurerm_resource_group.KPA-Belfast23-connor-rg.name
   virtual_network_name = azurerm_virtual_network.KPA-Belfast23-connor-vnet.name
   address_prefixes     = ["10.0.5.0/24"]
