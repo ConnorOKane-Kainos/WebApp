@@ -17,11 +17,12 @@ resource "azurerm_service_plan" "appserviceplan" {
 
 # The web app
 resource "azurerm_linux_web_app" "webapp" {
-  name                = "connor-web-application"
-  location            = azurerm_resource_group.KPA-Belfast23-connor-rg.location
-  resource_group_name = azurerm_resource_group.KPA-Belfast23-connor-rg.name
-  service_plan_id     = azurerm_service_plan.appserviceplan.id
-  https_only          = true
+  name                      = "connor-web-application"
+  location                  = azurerm_resource_group.KPA-Belfast23-connor-rg.location
+  resource_group_name       = azurerm_resource_group.KPA-Belfast23-connor-rg.name
+  service_plan_id           = azurerm_service_plan.appserviceplan.id
+  https_only                = true
+  virtual_network_subnet_id = azurerm_subnet.webapp-subnet.id
 
   site_config {
     minimum_tls_version = "1.2"
