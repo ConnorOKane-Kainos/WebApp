@@ -1,3 +1,4 @@
+# Creates an Azure PostgreSQL server with specified configurations, storage, backup, and security settings in the designated resource group.
 
 resource "azurerm_postgresql_server" "KPA-Belfast23-connor-sql" {
   name                = "connor-psqlserver"

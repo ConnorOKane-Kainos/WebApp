@@ -1,4 +1,8 @@
-#Private EndPoint
+# Sets up a private endpoint named "connor-PrivateEndPoint" in the "eastus" region and associated with the specified resource group.
+# This endpoint targets the PostgreSQL server, creating a secure and direct connection within the "db-subnet".
+# The connection, named "connor-privatesecureconnection", ensures that the PostgreSQL server is accessed privately within the virtual network, 
+# eliminating exposure to the public internet.
+
 resource "azurerm_private_endpoint" "connor-PrivateEndPoint" {
   name                = "connor-PrivateEndPoint"
   location            = "eastus"
